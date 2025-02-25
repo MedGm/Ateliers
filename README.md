@@ -7,17 +7,7 @@
 
 **Recueil d'ateliers pratiques pour le module Technologies Web 2**
 
-[Explorer les Ateliers](#ateliers) • 
-[Installation](#installation) • 
-
 </div>
-
-## 📋 Sommaire
-
-- [Présentation](#présentation)
-- [Ateliers](#ateliers)
-- [Installation](#installation)
-- [Utilisation](#utilisation)
 
 ## 📝 Présentation
 
