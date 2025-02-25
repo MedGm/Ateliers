@@ -2,14 +2,13 @@
 
 <div align="center">
 
-![Technologies Web Banner](https://github.com/user-attachments/assets/722c6387-8693-41e2-848e-b544bf95711b)
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="100" height="100">
 
 
 **Recueil d'ateliers pratiques pour le module Technologies Web 2**
 
 [Explorer les Ateliers](#ateliers) • 
 [Installation](#installation) • 
-[Licence](#licence)
 
 </div>
 
@@ -19,8 +18,6 @@
 - [Ateliers](#ateliers)
 - [Installation](#installation)
 - [Utilisation](#utilisation)
-- [Contribution](#contribution)
-- [Licence](#licence)
 
 ## 📝 Présentation
 
