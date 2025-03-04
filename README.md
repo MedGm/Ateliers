@@ -31,6 +31,18 @@ Exercices inclus :
 - Validation de formulaire
 - Carrousel d'images
 
+### Atelier 2 : Javascript et POO
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c0bee9a7-6a76-4ec4-9459-3bb855d32135" width="600px">
+</div>
+
+Exercices inclus :
+- Héritage en JavaScript
+- Objets natifs et prototypes
+- Classes (ES6)
+- Mini Blog
+
 ### Ateliers à venir
 
 De nouveaux ateliers seront ajoutés progressivement, couvrant des sujets avancés et des technologies web modernes.
