@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSI-Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emerald': '#06D6A0'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-[#F8FFE5] font-sans min-h-screen flex flex-col">
+    <div class="w-full flex-grow flex flex-col">
+        <header class="flex justify-between items-center p-4 bg-[#06D6A0] text-white shadow-md">
+            <h1 class="text-2xl font-bold">LSI-Blog</h1>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="bg-transparent border border-white text-white py-2 px-4 ml-2 rounded hover:bg-white hover:bg-opacity-20 transition">Login</button>
+                <button id="signupBtn" class="bg-transparent border border-white text-white py-2 px-4 ml-2 rounded hover:bg-white hover:bg-opacity-20 transition">Sign Up</button>
+                <button id="logoutBtn" style="display: none;" class="bg-transparent border border-white text-white py-2 px-4 ml-2 rounded hover:bg-white hover:bg-opacity-20 transition">Logout</button>
+            </div>
+        </header>
+        
+        <div class="p-4 md:p-8 flex-grow bg-white">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800">Blog Posts</h2>
+                <button id="addPostBtn" style="display: none;" class="bg-[#06D6A0] text-white py-2 px-6 rounded hover:bg-opacity-90 transition shadow">Add New Post</button>
+            </div>
+            
+            <div id="postsContainer" class="space-y-6">
+                <p class="text-gray-400 text-center py-16">Pas de posts pour le moment. Cliquez sur "Ajouter un post" pour en ajouter un.</p>
+            </div>
+        </div>
+        
+        <footer class="bg-gray-100 text-center py-4 text-gray-600">
+            &copy; 2025 LSI-Blog - Tous droits réservés - Réalisé par <a href="https://github.com/MedGm" class="text-[#06D6A0]">EL GORRIM MOHAMED</a>
+        </footer>
+
+        <div id="loginModal" class="modal">
+            <div class="bg-white p-8 w-11/12 max-w-md rounded-lg shadow-xl relative">
+                <span class="closeModal absolute top-2 right-3 text-2xl cursor-pointer text-gray-400 hover:text-black">&times;</span>
+                <h3 class="text-xl font-bold mb-6 text-gray-800">Login</h3>
+                <form id="loginForm" class="space-y-4">
+                    <div>
+                        <label for="loginUsername" class="block mb-2 font-semibold text-gray-700">Username</label>
+                        <input type="text" id="loginUsername" class="w-full p-3 border border-gray-300 rounded focus:ring focus:ring-[#06D6A0] focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label for="loginPassword" class="block mb-2 font-semibold text-gray-700">Password</label>
+                        <input type="password" id="loginPassword" class="w-full p-3 border border-gray-300 rounded focus:ring focus:ring-[#06D6A0] focus:outline-none" required>
+                    </div>
+                    <button type="submit" class="bg-[#06D6A0] text-white py-2 px-6 rounded hover:bg-opacity-90 float-right">Login</button>
+                    <div class="clear-both"></div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="signupModal" class="modal">
+            <div class="bg-white p-8 w-11/12 max-w-md rounded-lg shadow-xl relative">
+                <span class="closeModal absolute top-2 right-3 text-2xl cursor-pointer text-gray-400 hover:text-black">&times;</span>
+                <h3 class="text-xl font-bold mb-6 text-gray-800">Sign Up</h3>
+                <form id="signupForm" class="space-y-4">
+                    <div>
+                        <label for="signupUsername" class="block mb-2 font-semibold text-gray-700">Username</label>
+                        <input type="text" id="signupUsername" class="w-full p-3 border border-gray-300 rounded focus:ring focus:ring-[#06D6A0] focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label for="signupEmail" class="block mb-2 font-semibold text-gray-700">Email</label>
+                        <input type="email" id="signupEmail" class="w-full p-3 border border-gray-300 rounded focus:ring focus:ring-[#06D6A0] focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label for="signupPassword" class="block mb-2 font-semibold text-gray-700">Password</label>
+                        <input type="password" id="signupPassword" class="w-full p-3 border border-gray-300 rounded focus:ring focus:ring-[#06D6A0] focus:outline-none" required>
+                    </div>
+                    <button type="submit" class="bg-[#06D6A0] text-white py-2 px-6 rounded hover:bg-opacity-90 float-right">Sign Up</button>
+                    <div class="clear-both"></div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="postModal" class="modal">
+            <div class="bg-white p-8 w-11/12 max-w-md rounded-lg shadow-xl relative">
+                <span class="closeModal absolute top-2 right-3 text-2xl cursor-pointer text-gray-400 hover:text-black">&times;</span>
+                <h3 class="text-xl font-bold mb-6 text-gray-800">Create New Post</h3>
+                <form id="postForm" class="space-y-4">
+                    <div>
+                        <label for="postTitle" class="block mb-2 font-semibold text-gray-700">Title</label>
+                        <input type="text" id="postTitle" class="w-full p-3 border border-gray-300 rounded focus:ring focus:ring-[#06D6A0] focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label for="postContent" class="block mb-2 font-semibold text-gray-700">Content</label>
+                        <textarea id="postContent" rows="5" class="w-full p-3 border border-gray-300 rounded focus:ring focus:ring-[#06D6A0] focus:outline-none" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-[#06D6A0] text-white py-2 px-6 rounded hover:bg-opacity-90 float-right">Publish Post</button>
+                    <div class="clear-both"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="blog.js"></script>
+</body>
+</html>
