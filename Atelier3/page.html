@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traitement de Données Produits</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="bg-primary text-white py-3 mb-4">
+        <div class="container">
+            <h1 class="text-center">Traitement des Données Produits</h1>
+        </div>
+    </header>
+    
+    <div class="container mb-4">
+        <div class="row g-3 controls p-3 bg-light rounded">
+            <div class="col-md-3 search-container">
+                <input type="text" id="searchInput" class="form-control" placeholder="Rechercher des produits...">
+            </div>
+            
+            <div class="col-md-3 filter-container">
+                <label for="categoryFilter" class="form-label">Filtrer par catégorie:</label>
+                <select id="categoryFilter" class="form-select">
+                    <option value="">Toutes les catégories</option>
+                </select>
+            </div>
+            
+            <div class="col-md-3 sort-container">
+                <label for="sortBy" class="form-label">Trier par:</label>
+                <select id="sortBy" class="form-select">
+                    <option value="name">Nom</option>
+                    <option value="price">Prix</option>
+                    <option value="stock">Stock</option>
+                </select>
+            </div>
+            
+            <div class="col-md-3 low-stock-container">
+                <label class="form-label">&nbsp;</label>
+                <button id="lowStockBtn" class="btn btn-warning w-100">Produits en faible stock</button>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="summary-item card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Nombre de produits</h3>
+                        <p id="productCount" class="display-4 text-primary">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="summary-item card text-center h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Prix total</h3>
+                        <p id="totalPrice" class="display-4 text-success">0 €</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-container card mb-4">
+            <div class="card-header bg-light">
+                <h2>Liste des produits</h2>
+            </div>
+            <div class="card-body">
+                <div id="productsList" class="row g-3"></div>
+            </div>
+        </div>
+    </main>
+    
+    <section class="container mb-5">
+        <h2 class="mb-4">Tableau de bord</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="chart-item card h-100">
+                    <div class="card-header bg-light">
+                        <h3>Répartition par catégorie</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="chart-item card h-100">
+                    <div class="card-header bg-light">
+                        <h3>Produits par prix</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="chart-item card h-100">
+                    <div class="card-header bg-light">
+                        <h3>Niveau de stock</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="stockChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

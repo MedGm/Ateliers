@@ -1,0 +1,68 @@
+[
+{ 
+    "name": "Ordinateur portable", 
+    "price": 999, 
+    "category": "Électronique", 
+    "stock": 10 
+},
+{ 
+    "name": "Télévision", 
+    "price": 799, 
+    "category": "Électronique", 
+    "stock": 15 
+},
+{ 
+    "name": "Machine à laver", 
+    "price": 299, 
+    "category": "Électroménager", 
+    "stock": 8 
+},
+{ 
+    "name": "Sèche-linge", 
+    "price": 399, 
+    "category": "Électroménager", 
+    "stock": 6 
+},
+{ 
+    "name": "Vélo", 
+    "price": 299, 
+    "category": "Loisir", 
+    "stock": 4 
+},
+{ 
+    "name": "Console de jeux", 
+    "price": 399, 
+    "category": "Électronique", 
+    "stock": 7 
+},
+{ 
+    "name": "Cafetière", 
+    "price": 49, 
+    "category": "Électroménager", 
+    "stock": 9 
+},
+{ 
+    "name": "Barbecue", 
+    "price": 199, 
+    "category": "Nourriture", 
+    "stock": 3 
+},
+{ 
+    "name": "Aspirateur", 
+    "price": 79, 
+    "category": "Électroménager", 
+    "stock": 5 
+},
+{ 
+    "name": "Smartphone", 
+    "price": 599, 
+    "category": "Électronique", 
+    "stock": 20 
+},
+{ 
+    "name": "Tablette", 
+    "price": 349, 
+    "category": "Électronique", 
+    "stock": 12 
+}
+]
