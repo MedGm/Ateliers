@@ -1,25 +1,25 @@
 [
 { 
     "name": "Ordinateur portable", 
-    "price": 999, 
+    "price": 4500, 
     "category": "Électronique", 
     "stock": 10 
 },
 { 
     "name": "Télévision", 
-    "price": 799, 
+    "price": 1300, 
     "category": "Électronique", 
     "stock": 15 
 },
 { 
     "name": "Machine à laver", 
-    "price": 299, 
+    "price": 5000, 
     "category": "Électroménager", 
     "stock": 8 
 },
 { 
     "name": "Sèche-linge", 
-    "price": 399, 
+    "price": 400, 
     "category": "Électroménager", 
     "stock": 6 
 },
@@ -30,8 +30,8 @@
     "stock": 4 
 },
 { 
-    "name": "Console de jeux", 
-    "price": 399, 
+    "name": "PS4", 
+    "price": 2400, 
     "category": "Électronique", 
     "stock": 7 
 },
@@ -43,25 +43,25 @@
 },
 { 
     "name": "Barbecue", 
-    "price": 199, 
+    "price": 100, 
     "category": "Nourriture", 
     "stock": 3 
 },
 { 
     "name": "Aspirateur", 
-    "price": 79, 
+    "price": 70, 
     "category": "Électroménager", 
     "stock": 5 
 },
 { 
-    "name": "Smartphone", 
-    "price": 599, 
+    "name": "Iphone 12 Pro Max", 
+    "price": 6000, 
     "category": "Électronique", 
     "stock": 20 
 },
 { 
     "name": "Tablette", 
-    "price": 349, 
+    "price": 1500, 
     "category": "Électronique", 
     "stock": 12 
 }
