@@ -43,6 +43,20 @@ Exercices inclus :
 - Classes (ES6)
 - Mini Blog
 
+### Atelier 3 : Javascript et Functional Programming
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c860518b-3606-4e23-8ee7-993aea4d5399" width="600px">
+</div>
+
+Exercices inclus :
+- Filtrage et tri d'une liste de nombres
+- Calcul de factorielle sur une liste
+- Transformation de texte
+- Recherche du nombre maximum
+- Calcul du prix total TTC d'une liste de produits
+- Traitement des données de produits
+
 ### Ateliers à venir
 
 De nouveaux ateliers seront ajoutés progressivement, couvrant des sujets avancés et des technologies web modernes.
