@@ -87,5 +87,10 @@ Les objectifs de cet exercice sont :
    - Ouvrez le fichier `page.html` dans un navigateur web.
    - Le script `ex6.js` traitera les données contenues dans `test.json` et affichera les résultats ainsi que les graphiques sur le dashboard.
 
+## Photos :
+![Screenshot from 2025-03-13 13-01-31](https://github.com/user-attachments/assets/c30f4b98-94e0-4439-8f3b-9583f0d5be45)
+![Screenshot from 2025-03-13 13-01-36](https://github.com/user-attachments/assets/ee22c607-7c40-4cbd-9faa-42aaa015270a)
+
+
 ## Conclusion
 Cet atelier permet de mettre en pratique des techniques de programmation fonctionnelle ainsi que de développer une application web interactive pour le traitement et la visualisation de données produits. L'approche fonctionnelle simplifie la manipulation des données et favorise un code concis et lisible.
