@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+        
+        #status {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        form {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #refresh {
+            background-color: #2196F3;
+        }
+        
+        #refresh:hover {
+            background-color: #0b7dda;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        a {
+            color: #2196F3;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #e7f3fe;
+            border-radius: 4px;
+        }
+        
+        a:hover {
+            background-color: #d0e8fd;
+        }
+    </style>
+</head>
+<body>
+    <h1>File Manager</h1>
+    
+    <div id="zone-statut" class="statut"></div>
+    
+    <form id="form-upload-fichier">
+        <h2>Upload le fichier</h2>
+        <label for="input-fichier">Selectionner le fichier:</label>
+        <input type="file" id="input-fichier" required>
+        <button type="submit">Upload</button>
+    </form>
+    
+    <div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Liste des fichiers</h2>
+            <button id="btn-rafraichir" type="button">Refresh</button>
+        </div>
+        <div id="liste-fichiers">Charger les fichiers...</div>
+    </div>
+    
+    <script src="Ex2.js"></script>
+</body>
+</html>

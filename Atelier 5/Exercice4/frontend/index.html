@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Monitoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    <style>
+        .chart-container {
+            height: 400px;
+            margin-bottom: 30px;
+        }
+        .btn-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Stock Monitoring Dashboard</h1>
+        
+        <div class="btn-container">
+            <a href="manage-stocks.html" class="btn btn-primary">Manage Stocks</a>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Product Stock Levels</h3>
+            </div>
+            <div class="card-body">
+                <div id="stock-chart" class="chart-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialiser Pusher
+        const pusher = new Pusher('atelier5js', {
+            cluster: 'mt1',
+            forceTLS: true
+        });
+        
+        const channel = pusher.subscribe('stocks');
+        
+        channel.bind('App\\Events\\StockUpdated', function(data) {
+            fetchStockData();
+        });
+
+        function fetchStockData() {
+            fetch('http://localhost:8000/api/stocks')
+                .then(response => response.json())
+                .then(stocks => {
+                    renderChart(stocks);
+                })
+                .catch(error => {
+                    console.error('Error fetching stock data:', error);
+                });
+        }
+
+        function renderChart(stocks) {
+            const productNames = stocks.map(stock => stock.product_name);
+            const quantities = stocks.map(stock => stock.quantity);
+            
+            Highcharts.chart('stock-chart', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Product Stock Levels'
+                },
+                xAxis: {
+                    categories: productNames,
+                    title: {
+                        text: 'Products'
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Quantity'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">Quantity: </td>' +
+                        '<td style="padding:0"><b>{point.y}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Stock',
+                    data: quantities,
+                    colorByPoint: true
+                }]
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchStockData);
+    </script>
+</body>
+</html>
