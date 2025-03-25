@@ -57,6 +57,18 @@ Exercices inclus :
 - Calcul du prix total TTC d'une liste de produits
 - Traitement des données de produits
 
+### Atelier 5 : Programmation Asynchrone
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/dbdc6011-a2af-4192-9ad9-813c26917441" width="600px">
+</div>
+
+Exercices inclus :
+- Manipulation de Données Utilisateur Asynchrones
+- Gestion de Fichiers avec API Laravel
+- CRUD des Salles avec API Laravel
+- Application de Suivi des Stocks en Temps Réel
+
 ### Ateliers à venir
 
 De nouveaux ateliers seront ajoutés progressivement, couvrant des sujets avancés et des technologies web modernes.
