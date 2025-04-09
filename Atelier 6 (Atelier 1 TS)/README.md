@@ -1,100 +1,80 @@
-# Atelier 6 : Introduction à TypeScript
+# Atelier 6 : TypeScript & POO
 
-## Aperçu
+## Objectif
+Cet atelier vise à pratiquer la programmation orientée objet avec TypeScript à travers deux exercices concrets.
 
-Cet atelier (Atelier 6) est consacré à l'apprentissage des concepts fondamentaux de POO avec TypeScript. L'objectif principal est de comprendre et d'implémenter les principes de base de la POO à travers deux exercices pratiques.
+## Exercice 1 : Classe Point
+**Implémentation :**
+- Classe Point avec attributs privés (abs, ord)
+- Getters et setters
+- Méthode calculerDistance(p: Point) pour calculer la distance entre deux points
 
-## Objectifs d'Apprentissage
+**Fichiers :**
+- `Point.ts` : Classe Point
+- `test.ts` : Tests de validation
 
-- Comprendre les principes fondamentaux de TypeScript
-- Maîtriser la déclaration de classes et d'attributs avec modificateurs d'accès
-- Implémenter des getters et setters pour l'encapsulation
-- Créer des constructeurs et des méthodes personnalisées
-- Gérer les relations entre classes
-- Utiliser les tableaux d'objets typés
-- Implémenter des méthodes de recherche et de filtrage
+**Code clé :**
+```typescript
+class Point {
+  constructor(private abs: number, private ord: number) {}
+  
+  // Getters & setters
+  
+  calculerDistance(p: Point): number {
+    return Math.sqrt(Math.pow(this.abs - p.abs, 2) + Math.pow(this.ord - p.ord, 2));
+  }
+}
+```
 
-## Structure du Projet
+## Exercice 2 : Classes Adresse, Personne et ListePersonnes
+**Implémentation :**
+- Classes Adresse et Personne avec attributs privés
+- Relations entre classes (Personne contient un tableau d'Adresse)
+- Méthodes de recherche et comptage
 
-Cet atelier est divisé en deux exercices progressifs, chacun abordant différents aspects de POO avec TypeScript.
+**Fichiers :**
+- `Adresse.ts` : Classe pour gérer rue, ville et code postal
+- `Personne.ts` : Classe avec nom, sexe et tableau d'adresses
+- `ListePersonnes.ts` : Classe de gestion avec méthodes de recherche
+- `test.ts` : Tests de validation
 
-### Exercice 1 : Classe Point et Calcul de Distance
+**Fonctionnalités :**
+1. **findByNom(s: string)** : Recherche une personne par son nom
+2. **findByCodePostal(cp: string)** : Trouve les personnes résidant à un code postal
+3. **countPersonneVille(ville: string)** : Compte les personnes habitant dans une ville
 
-**Dossier**: `Ex1/`
+**Code clé :**
+```typescript
+class ListePersonnes {
+  constructor(private personnes: Personne[] = []) {}
+  
+  // Getters & setters
+  
+  findByNom(s: string): Personne | string {
+    for (let p of this.personnes) {
+      if (p.getNom() === s) return p;
+    }
+    return `${s} n'existe pas`;
+  }
+  
+  findByCodePostal(cp: string): Personne[] {
+    return this.personnes.filter(p => 
+      p.getAdresses().some(a => a.getCodePostal() === cp)
+    );
+  }
+  
+  countPersonneVille(ville: string): number {
+    return this.personnes.filter(p => 
+      p.getAdresses().some(a => a.getVille() === ville)
+    ).length;
+  }
+}
+```
 
-#### Fonctionnalités Implémentées
-- Création d'une classe Point avec deux attributs privés (abs et ord)
-- Implémentation d'un constructeur avec paramètres
-- Définition des getters et setters pour les attributs
-- Méthode de calcul de distance entre deux points
+## Installation & Exécution
+1. Compiler : `tsc`
+2. Exécuter : `node test.js`
 
-#### Technologies Utilisées
-- TypeScript
-- POO (Programmation Orientée Objet)
-- Fonctions mathématiques (Math.sqrt, Math.pow)
-
-#### Fichiers Clés
-- `Point.ts` : Définition de la classe Point
-- `test.ts` : Script de test pour valider les fonctionnalités
-
-### Exercice 2 : Gestion de Personnes et Adresses
-
-**Dossier**: `Ex2/`
-
-#### Fonctionnalités Implémentées
-- Création de classes Adresse et Personne avec encapsulation
-- Relation entre classes (Une personne peut avoir plusieurs adresses)
-- Implémentation d'une classe ListePersonnes pour gérer un ensemble de personnes
-- Méthodes de recherche par nom et code postal
-- Méthode de comptage de personnes par ville
-
-#### Technologies Utilisées
-- TypeScript
-- POO avancée (Relations entre classes)
-- Manipulation de tableaux d'objets typés
-- Algorithmes de recherche et de filtrage
-
-#### Fichiers Clés
-- `Adresse.ts` : Définition de la classe Adresse
-- `Personne.ts` : Définition de la classe Personne avec relation vers Adresse
-- `ListePersonnes.ts` : Classe de gestion des personnes
-- `test.ts` : Script de test pour valider les fonctionnalités
-
-## Configuration et Installation
-
-### Prérequis
-- Node.js (version récente)
-- TypeScript installé globalement (`npm install -g typescript`)
-
-### Installation
-1. Cloner le dépôt
-2. Naviguer vers le dossier de l'atelier
-3. Compiler les fichiers TypeScript avec la commande `tsc`
-4. Exécuter les fichiers JavaScript générés avec Node.js
-
-## Concepts Techniques Clés
-
-1. **Classes et Encapsulation**
-   - Définition d'attributs privés
-   - Utilisation de getters et setters pour contrôler l'accès
-
-2. **Constructeurs**
-   - Initialisation d'objets avec paramètres
-   - Utilisation de la syntaxe simplifiée de TypeScript
-
-3. **Relations entre Classes**
-   - Composition (Une personne possède des adresses)
-   - Manipulation de tableaux d'objets typés
-
-4. **Méthodes de Recherche et Filtrage**
-   - Recherche par critères (nom, code postal)
-   - Filtrage et comptage d'éléments répondant à certaines conditions
-
-5. **Types en TypeScript**
-   - Utilisation de types primitifs (number, string)
-   - Types complexes (tableaux d'objets)
-   - Union types et valeur de retour conditionnelle
-
-## Conclusion
-
-Cet atelier fournit une base solide pour comprendre les concepts fondamentaux de POO avec TypeScript. Les exercices pratiques permettent d'appliquer ces concepts dans des scénarios réalistes et progressifs. Les compétences acquises dans cet atelier serviront de fondation pour des applications plus complexes et structurées à l'avenir.
+## Technologies
+- TypeScript 
+- Node.js
