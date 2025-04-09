@@ -11,7 +11,6 @@ Cet atelier vise à pratiquer la programmation orientée objet avec TypeScript �
 
 **Fichiers :**
 - `Point.ts` : Classe Point
-- `test.ts` : Tests de validation
 
 **Code clé :**
 ```typescript
