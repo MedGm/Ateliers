@@ -69,6 +69,16 @@ Exercices inclus :
 - CRUD des Salles avec API Laravel
 - Application de Suivi des Stocks en Temps Réel
 
+### Atelier 6 (Atelier 1 TS) : Type Script
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/22651cca-bf40-4f71-954a-d260fa1236eb" width="600px">
+</div>
+
+Exercices inclus :
+- Classe Point
+- Classes Adresse, Personne et ListePersonnes
+
 ### Ateliers à venir
 
 De nouveaux ateliers seront ajoutés progressivement, couvrant des sujets avancés et des technologies web modernes.
